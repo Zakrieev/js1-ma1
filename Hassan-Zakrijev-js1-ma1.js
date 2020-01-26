@@ -18,58 +18,69 @@ const cat = {
   
   heading.classList.add("subheading");
   
-  // Question 5
-  
-  const paragraphs = document.querySelectorAll("p");
-  
+ // question 5
+
+   const paragraph = document.querySelectorAll("p");
+   or(let i = 0; i < paragraph.length; i++){
+    
+   console.log(paragraph[i].innerText);
+   }
+
   // Question 6
   
   const resultsContainer = document.querySelector(".results");
   
   resultsContainer.innerHTML = "<p>New paragraph</p>";
   
-  // Question 7
-  
-  const cats = [
+    // question 7
+
+    function scanArray(catArray){
+
+    for (let i = 0; i < catArray.length; i++){
+        console.log(catArray[i].name);
+        }
+    }
+
+
+    const cats = [
     {
-      name: "Blob",
-      age: 10
+        name: "Blob",
+        age: 10
     },
     {
-      name: "Harold"
+        name: "Harold",
     },
     {
-      name: "Blurt",
-      age: 21
+        name: "Blurt",
+        age: 21
     }
-  ];
+    ];
+
+    scanArray(cats);
+
+    // question 8
+
+    function scanArray(catArray){
+
+    let names = "";
+
+    for (let i = 0; i < catArray.length; i++){
+        names += `<h5>${catArray[i].name}</h5>`;
+        }
+
+    console.log(names);
+
+    return names;
+}
+
+    // question 9
+
+    resultsContainer.innerHTML = scanArray(cats);
+
   
-  function catNames(catArray) {
-    for (let i = 0; i < catArray.length; i++) {
-      console.log(cats[i].name);
-    }
-  }
+   // Question 10
   
-  catNames(cats);
-  
-  // Question 8
-  
-  function catNames(catArray) {
-    let divHTML = "";
-  
-    for (let i = 0; i < catArray.length; i++) {
-      divHTML += <h5>${catArray[i].name}</h5>;
-    }
-    return divHTML;
-  }
-  
-  // Question 9
-  
-  resultsContainer.innerHTML = catNames(cats);
-  
-  // Question 10
-  
-  function catNames(catArray) {
+  function scandiv(catArray) {
     let divHTML = "";
   
     for (let i = 0; i < catArray.length; i++) {
@@ -86,3 +97,5 @@ const cat = {
   
     return divHTML;
   }
+
+resultsContainer.innerHTML = scandiv(cats);
